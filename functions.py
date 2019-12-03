@@ -277,11 +277,11 @@ def addPerson(dictionary, personName, personSpecs):
   name = personName
   age = personSpecs['age']
   sex = personSpecs['sex']
-  """
+  
   if not name.isalpha():
     print("The name " + name + " contains a number. Names can only have letters")
     return None
-  """
+  
   for p in dictionary.keys():
     if p == name:
       print("Cannot add " + name + " to the dictionary because the name already exists in the dictionary.")
