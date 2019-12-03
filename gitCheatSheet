@@ -8,3 +8,4 @@ git status
 git add [fileName]
 git commit -m "[a text related to the file you are adding]"
 git push
+	updates the github repository with [fileName]
