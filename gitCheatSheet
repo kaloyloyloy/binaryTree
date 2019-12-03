@@ -1,0 +1,10 @@
+git clone [url]
+	copies all the files from that link
+
+git status
+	see status of all files
+	which is updated, which is not in sync, etc.
+
+git add [fileName]
+git commit -m "[a text related to the file you are adding]"
+git push
