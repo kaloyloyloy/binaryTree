@@ -250,6 +250,15 @@ class Tree(object):
       else:
         return Great(furthest) + " grand " + Term("child", d1, d2, sex)
 
+  def getLinks(self):
+    tree = self
+    root = self.getRoot()
+    desc = root.getDesc([])
+    links = []
+    for nodeName in desc:
+      node = tree.findNode(nodeName)
+      links.append([node.getParent().name, node.name])
+    return links
 
 
 
@@ -336,7 +345,7 @@ tree.findNode(14).addChild(20, root)
 tree.findNode(14).addChild(21, root)
 #print(tree.getName())
 #print(tree.findNode(1).getDesc([]))
-print(makeList(root, []))
+#print(makeList(root, []))
 """
 Attempt to make invalid for testing purposes:
 """
@@ -401,3 +410,4 @@ addPerson(attri, 20, p20)
 addPerson(attri, 21, p21)
 
 #print(getAttri(attri, 6, 'age'))
+print(tree.getLinks())
