@@ -361,7 +361,6 @@ def loadTree(t):
     addPerson(attri, person, p1)
     for x in range(3):
       a.popleft()
-  print(attri)
   if ((a[0].split())[0] == 'links'):
     links = int((a[0].split())[1])
     a.popleft()
@@ -371,22 +370,18 @@ def loadTree(t):
     person1 = (a[0].split())[1]
     person2 = (a[0].split())[2]
     try:
-      print(person1, person2)
       if(tree.findNode(person1).name == person1):
         tree.findNode(person1).addChild(person2, root)
         for u,v in temp.items():
           if(tree.findNode(person2).name == u):
             tree.findNode(u).addChild(v, root)
             temp.pop(u,v)
-            print('it works')
         
     except:
       if(bool(temp)==False):
         temp[person1]=person2
-        print('a')
 
     a.popleft()
-  print(makeList(root,[root.name]))
   return([tree,attri])
 def saveTree(t):
   with open(t, 'w') as f:
@@ -400,105 +395,6 @@ def saveTree(t):
     for x in tree.getLinks():
       person1, person2 = x
       f.write('tree ' + person1 +' ' +person2 +'\n')
-
-""" A Tree which holds Nodes to show relationship between nodes """
-
-#Generates nodes in tree
-
-"""
-tree = Tree(1, "Fam")
-root = tree.getRoot()
-tree.findNode(1).addChild(2, root)
-tree.findNode(1).addChild(3, root)
-tree.findNode(2).addChild(4, root)
-tree.findNode(2).addChild(5, root)
-tree.findNode(3).addChild(6, root)
-tree.findNode(3).addChild(7, root)
-tree.findNode(4).addChild(8, root)
-tree.findNode(4).addChild(9, root)
-tree.findNode(5).addChild(10, root)
-tree.findNode(5).addChild(11, root)
-tree.findNode(6).addChild(12, root)
-tree.findNode(6).addChild(13, root)
-tree.findNode(7).addChild(14, root)
-tree.findNode(7).addChild(15, root)
-tree.findNode(10).addChild(16, root)
-tree.findNode(10).addChild(17, root)
-tree.findNode(17).addChild(18, root)
-tree.findNode(17).addChild(19, root)
-tree.findNode(14).addChild(20, root)
-tree.findNode(14).addChild(21, root)
-"""
-#print(tree.getName())
-#print(tree.findNode(1).getDesc([]))
-
-"""
-Attempt to make invalid for testing purposes:
-"""
-#tree.findNode(20).addChild(5, root)
-
-#print(tree.findNode(14).addChild(22, root))
-#print(tree.findNode(14).getChildren()[0].name)
-#print(tree.lca(16,[],19,[]).name)
-#print(tree.findDist(anc, young, 0))
-#print(makeList(root, [root.name]))
-#print(isTree(tree))
-#print(tree.findNode(1).getDesc([]))
-
-
-""" A dictionary that maps people names to people age/sex: """
-#generates people attributes
-"""
-attri = makeAttributes()
-p1 = makePerson(17, True)
-p2 = makePerson(17, True)
-p3 = makePerson(17, True)
-p4 = makePerson(17, False)
-p5 = makePerson(3, True)
-p6 = makePerson(35, False)
-p7 = makePerson(2, True)
-p8 = makePerson(6, True)
-p9 = makePerson(6, True)
-p10 = makePerson(17, True)
-p11 = makePerson(17, True)
-p12 = makePerson(17, False)
-p13 = makePerson(87, False)
-p14 = makePerson(17, True)
-p15 = makePerson(17, False)
-p16 = makePerson(17, True)
-p17 = makePerson(17, False)
-p18 = makePerson(87, False)
-p19 = makePerson(17, True)
-p20 = makePerson(17, False)
-p21 = makePerson(17, True)
-"""
-
-#maps names to people attributes
-"""
-addPerson(attri, 1, p1)
-addPerson(attri, 2, p2)
-addPerson(attri, 3, p3)
-addPerson(attri, 4, p4)
-addPerson(attri, 5, p5)
-addPerson(attri, 6, p6)
-addPerson(attri, 7, p7)
-addPerson(attri, 8, p8)
-addPerson(attri, 9, p9)
-addPerson(attri, 10, p10)
-addPerson(attri, 11, p11)
-addPerson(attri, 12, p12)
-addPerson(attri, 13, p13)
-addPerson(attri, 14, p14)
-addPerson(attri, 15, p15)
-addPerson(attri, 16, p16)
-addPerson(attri, 17, p17)
-addPerson(attri, 18, p18)
-addPerson(attri, 19, p19)
-addPerson(attri, 20, p20)
-addPerson(attri, 21, p21)
-"""
-
-#print(getAttri(attri, 6, 'age'))
 
 
 a=loadTree('mamamo.ft')
