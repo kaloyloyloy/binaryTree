@@ -90,7 +90,7 @@ class Node(object):
 def makeList(root, l):
   #this will be used by isTree to determine if a tree is valid
   #root is the root of a tree
-  # l is an empty list initially
+  # l is a list which initially contains root
   try:
     leftChild = root.getChildren()[0]
     l.append(leftChild.name)
@@ -277,11 +277,11 @@ def addPerson(dictionary, personName, personSpecs):
   name = personName
   age = personSpecs['age']
   sex = personSpecs['sex']
-  
+  """
   if not name.isalpha():
     print("The name " + name + " contains a number. Names can only have letters")
     return None
-  
+  """
   for p in dictionary.keys():
     if p == name:
       print("Cannot add " + name + " to the dictionary because the name already exists in the dictionary.")
@@ -336,7 +336,7 @@ tree.findNode(14).addChild(20, root)
 tree.findNode(14).addChild(21, root)
 #print(tree.getName())
 #print(tree.findNode(1).getDesc([]))
-
+print(makeList(root, []))
 """
 Attempt to make invalid for testing purposes:
 """
